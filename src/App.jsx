@@ -10,22 +10,35 @@ const Wrapper = Styled.div`
 	font-size: 1rem;
 	color: #FFF;
 	margin: 0 auto;
-	position: relative;
 	min-height: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	
+	@media (min-width: 1024px) {
+		position: relative;
+	}
 
 	.spline {
-		position: absolute;
-		top: 0;
-		right: 0;
+		transform: scale(0.8);
+		margin: 5rem auto;
+		
+		@media (min-width: 1024px) {
+			position: absolute;
+			transform: scale(1);
+		}
 	}
 `
 
 const Content = Styled.div`
-	position: absolute;
+	position: relative;
 	top: 30px;
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
+	
+	@media (min-width: 1024px) {
+		position: absolute;
+	}
 
 	h1 {
 		font-family: 'Spline Sans Mono', 'sans-serif';
@@ -117,7 +130,7 @@ const App = () => {
 		<>
 			<Wrapper>
 				<Spline
-					className="hola"
+					className="spline"
 					scene="https://prod.spline.design/I73gDDGyti8hMHis/scene.splinecode"
 				/>
 				<Content>
